@@ -1,0 +1,83 @@
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0; }
+
+/* Utilities */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background: #ececdb; }
+
+a {
+    text-decoration: none;
+    color: #000; }
+
+ul {
+    list-style: none; }
+
+.container {
+    max-width: 1280px;
+    padding: 0 1.5rem;
+    margin: auto;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+}
+
+/* Navbar */
+
+#logo {
+    padding-top: 10px;
+    width: 300px;
+    height: 70px;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+}
+
+#main-nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem; }
+#main-nav ul {
+    display: flex; }
+#main-nav li {
+    padding: 1rem 1.5rem; }
+#main-nav a {
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    border-bottom: 3px transparent solid;
+    padding-bottom: 5px;
+    transition: border-color 0.5s; }
+#main-nav a:hover {
+    border-color: #8b8989; }
+#main-nav a.current {
+    border-color: #000000; }
+
+/* Showcase */
+
+#showcase {
+    background: url('../img/dealership.jpeg') no-repeat center center/cover;
+    height: 550px;
+}
+
+#showcase .showcase-content {
+    color: white;
+    text-align: center;
+    margin-top: 200px;
+}
+
+#showcase .showcase-content h1 {
+    font-size: 50px;
+    line-height: 1.2em;
+    background: rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    padding: 1.5rem;
+    border-radius: 1rem;
+}
