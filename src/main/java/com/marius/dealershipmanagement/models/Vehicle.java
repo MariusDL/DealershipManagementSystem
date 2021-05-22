@@ -2,6 +2,7 @@ package com.marius.dealershipmanagement.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "vehicles")
@@ -12,7 +13,7 @@ public class Vehicle {
     private Integer id;
 
     @Column(name = "key_tag")
-    @NotEmpty
+    @NotNull
     private int keyTagNumber;
 
     @Column(name = "make")
@@ -44,11 +45,11 @@ public class Vehicle {
     private String colour;
 
     @Column(name = "buying_price")
-    @NotEmpty
+    @NotNull
     private Double buyingPrice;
 
     @Column(name = "selling_price")
-    @NotEmpty
+    @NotNull
     private Double sellingPrice;
 
     public Integer getId() {

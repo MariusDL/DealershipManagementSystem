@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -35,5 +36,24 @@ public class VehicleController {
         model.put("vehicles",vehicles);
         model.put("vehicleToFind", new Vehicle());
         return "vehicles/vehicles";
+    }
+
+    @GetMapping("/new-vehicle")
+    public String addNewVehicle(Map<String, Object> model){
+        model.put("vehicle", new Vehicle());
+
+        return "vehicles/addUpdateVehicleForm";
+    }
+
+    @PostMapping("/new-vehicle")
+    public String addVehicle(@Valid Vehicle vehicle, BindingResult result){
+
+        if (result.hasErrors()) {
+            return "vehicles/addUpdateVehicleForm";
+        } else {
+            this.vehicleRepository.save(vehicle);
+        }
+
+        return "redirect:/vehicles";
     }
 }

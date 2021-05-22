@@ -32,7 +32,7 @@
     <div class="above-table">
         <h3>All vehicles</h3>
         <div>
-            <a href="#" class="add-button"><i class="fas fa-plus"></i> Add vehicle</a>
+            <a href="/new-vehicle" class="add-button"><i class="fas fa-plus"></i> Add vehicle</a>
         </div>
         <form action="#" th:action="@{/vehicles}" th:object="${vehicleToFind}" method="post">
             <input th:field="*{reg}" type="text" id="reg" name="reg" placeholder="Enter vehicle reg">

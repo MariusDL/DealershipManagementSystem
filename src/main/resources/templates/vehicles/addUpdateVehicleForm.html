@@ -1,10 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8">
     <title>Add New Vehicle</title>
 </head>
 <body>
+<!-- Header -->
+<header id="header-home">
+    <div class="container">
+        <nav id="main-nav">
+            <h1 id="logo">Car Dealership</h1>
+            <ul>
+                <li><a href="index.html" ><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="sales"><i class="fas fa-coins"></i> Sales</a></li>
+                <li><a href="vehicles" class="current"><i class="fas fa-car"></i> Vehicles</a></li>
+                <li><a href="clients"><i class="fas fa-users"></i> Clients</a></li>
+                <li><a href="sellers"><i class="fas fa-user-tie"></i> Sellers</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
+
+    <div class="container">
+        <h3>Vehicle</h3>
+        <div>
+            <form action="#" th:action="@{/new-vehicle}" th:object="${vehicle}" method="post">
+                <div class="vehicle-form">
+                    <div class="flex-container">
+                        <div class="column">
+                            <div class="form-group">
+                                <label for="keyTagInput">Key tag number</label>
+                                <input th:field="*{keyTagNumber}" type="number" class="form-control" id="keyTagInput" aria-describedby="keyTagInput" placeholder="Enter key tag number">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="vehicleMake">Vehicle make</label>
+                                <input th:field="*{make}" type="text" class="form-control" id="vehicleMake" aria-describedby="vehicleMake" placeholder="Enter the vehicle manufacturer">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="vehicleModel">Vehicle model</label>
+                                <input th:field="*{model}" type="text" class="form-control" id="vehicleModel" aria-describedby="vehicleModel" placeholder="Enter the vehicle model">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="vehicleReg">Registration number</label>
+                                <input th:field="*{reg}" type="text" class="form-control" id="vehicleReg" aria-describedby="vehicleReg" placeholder="Enter the vehicle reg number">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="year">Year</label>
+                                <input th:field="*{fabrication_year}" type="text" class="form-control" id="year" aria-describedby="year" placeholder="Enter the fabrication year">
+                            </div>
+                        </div>
+
+                        <div class="column">
+                            <div class="form-group">
+                                <label for="transmission">Transmission type</label>
+                                <input th:field="*{transmission}" type="text" class="form-control" id="transmission" aria-describedby="transmission" placeholder="Enter the transmission type">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cc">CC</label>
+                                <input th:field="*{cc}" type="text" class="form-control" id="cc" aria-describedby="cc" placeholder="Enter the engine size in cc">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="colour">Colour</label>
+                                <input th:field="*{colour}" type="text" class="form-control" id="colour" aria-describedby="colour" placeholder="Enter the vehicle colour">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="buyingPrice">Buying price</label>
+                                <input th:field="*{buyingPrice}" type="number" class="form-control" id="buyingPrice" aria-describedby="buyingPrice" placeholder="Enter the buying price">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="sellingPrice">Selling price</label>
+                                <input th:field="*{sellingPrice}" type="number" class="form-control" id="sellingPrice" aria-describedby="sellingPrice" placeholder="Enter the selling price">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-add-vehicle"><i class="fas fa-plus"></i> Add vehicle</button>
+                    <a href="/vehicles" class="btn btn-primary"><i class="fas fa-undo"></i> Back</a>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
 </body>
 </html>

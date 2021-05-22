@@ -110,3 +110,23 @@ img {
     display: grid;
     grid-template-columns: 3fr 0.5fr 1fr;
 }
+
+.vehicle-form {
+    padding: 10px;
+    border: 1px solid #787878;
+
+}
+
+.vehicle-form .flex-container {
+    display: flex;
+}
+
+.vehicle-form .flex-container .column {
+    width: 50%;
+    padding: 0 30px;
+}
+
+.btn-add-vehicle {
+    margin: 10px 30px;
+
+}
