@@ -20,7 +20,7 @@
                 <li><a href="index.html" ><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="sales"><i class="fas fa-coins"></i> Sales</a></li>
                 <li><a href="" class="current"><i class="fas fa-car"></i> Vehicles</a></li>
-                <li><a href="clients"><i class="fas fa-users"></i> Clients</a></li>
+                <li><a th:href="@{/clients}"><i class="fas fa-users"></i> Clients</a></li>
                 <li><a href="sellers"><i class="fas fa-user-tie"></i> Sellers</a></li>
             </ul>
         </nav>
@@ -64,7 +64,6 @@
                 <td scope="row">
                     <a th:href="@{/vehicles/__${vehicle.id}__}" th:text="${vehicle.reg}"/></a>
                 </td>
-<!--                <td th:text="${vehicle.reg}" scope="row"></td>-->
                 <td th:text="${vehicle.fabrication_year}" scope="row"></td>
                 <td th:text="${vehicle.transmission}" scope="row"></td>
                 <td th:text="${vehicle.cc}" scope="row"></td>

@@ -17,10 +17,10 @@
         <nav id="main-nav">
             <h1 id="logo">Car Dealership</h1>
             <ul>
-                <li><a href="index.html" ><i class="fas fa-home"></i> Home</a></li>
+                <li><a th:href="@{/}" ><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="sales"><i class="fas fa-coins"></i> Sales</a></li>
                 <li><a th:href="@{/vehicles}" class="current"><i class="fas fa-car"></i> Vehicles</a></li>
-                <li><a href="clients"><i class="fas fa-users"></i> Clients</a></li>
+                <li><a th:href="@{/clients}"><i class="fas fa-users"></i> Clients</a></li>
                 <li><a href="sellers"><i class="fas fa-user-tie"></i> Sellers</a></li>
             </ul>
         </nav>
@@ -90,8 +90,8 @@
                         </div>
                     </div>
                     <button th:if="${vehicle.id == null}" type="submit" class="btn btn-primary btn-add-vehicle"><i class="fas fa-plus"></i> Add vehicle</button>
-                    <button th:if="${vehicle.id != null}" type="submit" class="btn btn-primary btn-add-vehicle"><i class="fas fa-plus"></i> Update vehicle</button>
-                    <a th:if="${vehicle.id != null}" th:href="@{/vehicles/{id}/delete(id=${vehicle.id})}" class="btn btn-primary"><i class="fas fa-plus"></i> Delete vehicle</a>
+                    <button th:if="${vehicle.id != null}" type="submit" class="btn btn-primary btn-add-vehicle"><i class="fas fa-edit"></i> Update vehicle</button>
+                    <a th:if="${vehicle.id != null}" th:href="@{/vehicles/{id}/delete(id=${vehicle.id})}" class="btn btn-primary"><i class="fas fa-times"></i> Delete vehicle</a>
                     <a href="/vehicles" class="btn btn-primary"><i class="fas fa-undo"></i> Back</a>
                 </div>
             </form>

@@ -130,3 +130,29 @@ img {
     margin: 10px 0 10px 30px;
 
 }
+
+/* Clients */
+#clients tbody tr:hover{
+    background-color: #b1b1b1;
+}
+
+.client-form {
+    padding: 10px;
+    border: 1px solid #787878;
+
+}
+
+.client-form .form-container {
+    width: 500px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.client-form .form-container .btn-primary {
+    margin-top: 15px;
+}
+
+.client-form .form-container .flex-container {
+    display: flex;
+    justify-content: space-between;
+}

@@ -60,7 +60,6 @@ public class VehicleController {
         } else {
             this.vehicleRepository.save(vehicle);
         }
-
         return "redirect:/vehicles";
     }
 
@@ -68,9 +67,7 @@ public class VehicleController {
     public String editVehicle(@PathVariable("vehicleId") int vehicleId, Map<String, Object> model){
 
         Vehicle vehicle = this.vehicleRepository.findVehicleById(vehicleId);
-
         model.put("vehicle", vehicle);
-
         return "vehicles/addUpdateVehicleForm";
     }
 
@@ -78,9 +75,6 @@ public class VehicleController {
     public String deleteVehicle(@PathVariable("vehicleId") int vehicleId){
 
         this.vehicleRepository.deleteById(vehicleId);
-
-
-
         return "redirect:/vehicles";
     }
 }

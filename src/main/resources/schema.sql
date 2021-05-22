@@ -11,3 +11,12 @@ CREATE TABLE vehicles (
     buying_price DOUBLE,
     selling_price DOUBLE
 );
+
+CREATE TABLE clients (
+    id INTEGER IDENTITY PRIMARY KEY,
+    first_name VARCHAR(30),
+    last_name  VARCHAR(30),
+    address VARCHAR(50),
+    phone VARCHAR(15),
+    email VARCHAR(40)
+);
