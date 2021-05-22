@@ -61,7 +61,10 @@
                 <td th:text="${vehicle.keyTagNumber}" scope="row"></td>
                 <td th:text="${vehicle.make}" scope="row"></td>
                 <td th:text="${vehicle.model}" scope="row"></td>
-                <td th:text="${vehicle.reg}" scope="row"></td>
+                <td scope="row">
+                    <a th:href="@{/vehicles/__${vehicle.id}__}" th:text="${vehicle.reg}"/></a>
+                </td>
+<!--                <td th:text="${vehicle.reg}" scope="row"></td>-->
                 <td th:text="${vehicle.fabrication_year}" scope="row"></td>
                 <td th:text="${vehicle.transmission}" scope="row"></td>
                 <td th:text="${vehicle.cc}" scope="row"></td>

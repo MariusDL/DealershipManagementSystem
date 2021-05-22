@@ -11,14 +11,20 @@ import java.util.List;
 
 public interface VehicleRepository extends Repository<Vehicle, Integer> {
 
+    // Return all vehicles
     List<Vehicle> findAll();
 
-    @Query("SELECT DISTINCT vehicle FROM Vehicle vehicle WHERE vehicle.reg LIKE :reg%")
-    @Transactional(readOnly = true)
-    List<Vehicle> findVehicleByReg(@Param("reg") String reg);
-
+    // Find vehicle by registration number
     List<Vehicle> findByRegContaining(String reg);
 
+    //find vehicle by id
+    Vehicle findVehicleById(Integer id);
+
+    // Add vehicle to database
     void save(Vehicle vehicle);
+
+    // delete vehicle by id
+    void deleteById(Integer id);
+
 
 }
