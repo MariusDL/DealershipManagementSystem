@@ -19,7 +19,7 @@
             <ul>
                 <li><a href="index.html" ><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="sales"><i class="fas fa-coins"></i> Sales</a></li>
-                <li><a href="vehicles" class="current"><i class="fas fa-car"></i> Vehicles</a></li>
+                <li><a href="" class="current"><i class="fas fa-car"></i> Vehicles</a></li>
                 <li><a href="clients"><i class="fas fa-users"></i> Clients</a></li>
                 <li><a href="sellers"><i class="fas fa-user-tie"></i> Sellers</a></li>
             </ul>
@@ -34,8 +34,8 @@
         <div>
             <a href="#" class="add-button"><i class="fas fa-plus"></i> Add vehicle</a>
         </div>
-        <form>
-            <input type="text" id="reg" name="reg" placeholder="Enter vehicle reg">
+        <form action="#" th:action="@{/vehicles}" th:object="${vehicleToFind}" method="post">
+            <input th:field="*{reg}" type="text" id="reg" name="reg" placeholder="Enter vehicle reg">
             <input type="submit" value=" Find ">
         </form>
     </div>
