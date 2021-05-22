@@ -46,7 +46,7 @@ public class ClientController {
         return "clients/clients";
     }
 
-    // Returns the form to add a new vehicle
+    // Returns the form to add a new client
     @GetMapping("/new-client")
     public String addNewClient(Map<String, Object> model){
         model.put("client", new Client());

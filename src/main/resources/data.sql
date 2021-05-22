@@ -15,3 +15,6 @@ INSERT INTO clients VALUES (6, 'Sarah', 'Thomson', '5 Wilbraham Road, WS1 4BG, D
 INSERT INTO clients VALUES (7, 'Jim', 'Carey', '42 New Road, WS12 0KL, Cannock', '07864521123', 'jim@email.com');
 INSERT INTO clients VALUES (8, 'Kim', 'Robinson', '11 West Bromwich St, WS1 4BT, Rugeley', '07863518826', 'kim@email.com');
 
+INSERT INTO sellers VALUES (1, 'Liam', 'Nelson', '0252435678', 'liam@dealership.com', 'Small Vehicles');
+INSERT INTO sellers VALUES (2, 'James', 'Moore', '0245782729', 'james@dealership.com', 'Vans');
+INSERT INTO sellers VALUES (3, 'Nathan', 'Daniels', '0254726392', 'nathan@dealership.com', 'Electric Vehicles');

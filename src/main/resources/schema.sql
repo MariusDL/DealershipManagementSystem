@@ -20,3 +20,13 @@ CREATE TABLE clients (
     phone VARCHAR(15),
     email VARCHAR(40)
 );
+
+
+CREATE TABLE sellers (
+    id INTEGER IDENTITY PRIMARY KEY,
+    first_name VARCHAR(30),
+    last_name  VARCHAR(30),
+    phone VARCHAR(15),
+    email VARCHAR(40),
+    department VARCHAR(40)
+);
