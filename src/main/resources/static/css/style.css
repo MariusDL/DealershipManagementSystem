@@ -156,3 +156,30 @@ img {
     display: flex;
     justify-content: space-between;
 }
+
+
+/* Sales */
+
+#sales tbody tr:hover{
+    background-color: #b1b1b1;
+}
+
+#sales tbody tr a:hover{
+    border-bottom: 2px solid #000;
+}
+
+.sale-form {
+    padding: 10px;
+    border: 1px solid #787878;
+
+}
+
+.sale-form .form-container {
+    width: 500px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.sale-form .form-container .btn-primary {
+    margin-top: 15px;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <title>Sell Vehicle</title>
+</head>
+<body>
+<!-- Header -->
+<header id="header-home">
+    <div class="container">
+        <nav id="main-nav">
+            <h1 id="logo">Car Dealership</h1>
+            <ul>
+                <li><a th:href="@{/}" ><i class="fas fa-home"></i> Home</a></li>
+                <li><a th:href="@{/sales}" class="current"><i class="fas fa-coins"></i> Sales</a></li>
+                <li><a th:href="@{/vehicles}"><i class="fas fa-car"></i> Vehicles</a></li>
+                <li><a th:href="@{/clients}"><i class="fas fa-users"></i> Clients</a></li>
+                <li><a th:href="@{/sellers}"><i class="fas fa-user-tie"></i> Sellers</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <h3>Sell Vehicle</h3>
+
+    <div>
+        <form action="#" th:action="@{/new-sale}" th:object="${sale}" method="post">
+            <div class="sale-form">
+                <div class="form-container">
+                    <div class="flex-container">
+                        <div class="form-group">
+                            <label for="clientInput">Select client</label>
+                            <select th:field="*{client}" type="text" class="form-control" id="clientInput" aria-describedby="clientInput">
+                                <option th:each="client : ${clients}"
+                                        th:value="${client}"
+                                        th:text="${client.firstName} + ' ' + ${client.lastName}">Client</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sellerInput">Select seller</label>
+                            <select th:field="*{seller}" type="text" class="form-control" id="sellerInput" aria-describedby="sellerInput">
+                                <option th:each="seller : ${sellers}"
+                                        th:value="${seller}"
+                                        th:text="${seller.firstName} + ' ' + ${seller.lastName}">Seller</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="flex-container">
+                        <div class="form-group">
+                            <label for="vehicleInput">Select vehicle</label>
+                            <select th:field="*{vehicleId}" type="text" class="form-control" id="vehicleInput" aria-describedby="vehicleInput">
+                                <option th:each="vehicle : ${vehicles}"
+                                        th:value="${vehicle.id}"
+                                        th:text="${vehicle.reg}">Vehicle</option>
+                            </select>
+                        </div>
+
+                        <label for="dateSold">Select date</label><br>
+                        <input type="date" th:field="*{dateSold}" id="dateSold"/>
+
+                    </div>
+
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Sell vehicle</button>
+                    <a href="/sales" class="btn btn-primary"><i class="fas fa-undo"></i> Cancel</a>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

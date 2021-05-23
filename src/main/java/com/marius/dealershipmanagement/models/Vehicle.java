@@ -139,4 +139,9 @@ public class Vehicle {
     public void setSellingPrice(Double sellingPrice) {
         this.sellingPrice = sellingPrice;
     }
+
+    @Override
+    public String toString() {
+        return this.getReg();
+    }
 }

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>Sales</title>
+</head>
+<body>
+<!-- Header -->
+<header id="header-home">
+  <div class="container">
+    <nav id="main-nav">
+      <h1 id="logo">Car Dealership</h1>
+      <ul>
+        <li><a th:href="@{/}" ><i class="fas fa-home"></i> Home</a></li>
+        <li><a th:href="@{/sales}" class="current"><i class="fas fa-coins"></i> Sales</a></li>
+        <li><a th:href="@{/vehicles}"><i class="fas fa-car"></i> Vehicles</a></li>
+        <li><a th:href="@{/clients}"><i class="fas fa-users"></i> Clients</a></li>
+        <li><a th:href="@{/sellers}"><i class="fas fa-user-tie"></i> Sellers</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="above-table">
+    <h3>All sales</h3>
+    <div>
+      <a href="/new-sale" class="add-button"><i class="fas fa-plus"></i> Add sale</a>
+    </div>
+    <form action="#" th:action="@{/sales}" th:object="${saleToFind}" method="post">
+      <input th:field="*{vehicleReg}" type="text" id="reg" name="reg" placeholder="Enter vehicle reg">
+      <input type="submit" value=" Find ">
+    </form>
+  </div>
+
+  <table id="sales" class="table" >
+    <thead>
+    <tr>
+      <th scope="col">Date sold</th>
+      <th scope="col">Vehicle Reg</th>
+      <th scope="col">Vehicle Make</th>
+      <th scope="col">Vehicle Model</th>
+      <th scope="col">Client name</th>
+      <th scope="col">Seller name</th>
+      <th scope="col">Buying price</th>
+      <th scope="col">Selling price</th>
+      <th scope="col">Profit</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="sale : ${sales}" >
+      <td th:text="${sale.dateSold}" scope="row"></td>
+      <td th:text="${sale.vehicleReg}" scope="row"></td>
+      <td th:text="${sale.vehicleMake}" scope="row"></td>
+      <td th:text="${sale.vehicleModel}" scope="row"></td>
+      <td scope="row">
+        <a th:href="@{/clients/__${sale.client.id}__}" th:text="${sale.client.firstName} + ' ' + ${sale.client.lastName}"/></a>
+      </td>
+      <td scope="row">
+        <a th:href="@{/sellers/__${sale.seller.id}__}" th:text="${sale.seller.firstName} + ' ' + ${sale.seller.lastName}"/></a>
+      </td>
+      <td th:text="${sale.buyingPrice}" scope="row"></td>
+      <td th:text="${sale.sellingPrice}" scope="row"></td>
+      <td  th:with="result=${sale.sellingPrice - sale.buyingPrice}" th:text="${result}" scope="row"></td>
+
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+</body>
+</html>

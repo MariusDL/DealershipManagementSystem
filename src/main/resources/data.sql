@@ -18,3 +18,7 @@ INSERT INTO clients VALUES (8, 'Kim', 'Robinson', '11 West Bromwich St, WS1 4BT,
 INSERT INTO sellers VALUES (1, 'Liam', 'Nelson', '0252435678', 'liam@dealership.com', 'Small Vehicles');
 INSERT INTO sellers VALUES (2, 'James', 'Moore', '0245782729', 'james@dealership.com', 'Vans');
 INSERT INTO sellers VALUES (3, 'Nathan', 'Daniels', '0254726392', 'nathan@dealership.com', 'Electric Vehicles');
+
+INSERT INTO sales VALUES (1, 22, '2021-04-18', 'LL15KLJ', 'Toyota', 'Supra', 3, 2, 12000.0, 18000.0);
+INSERT INTO sales VALUES (2, 33, '2021-05-18', 'GG14TYU', 'Mitsubishi', 'Outlander', 2, 1, 15000.0, 22000.0);
+

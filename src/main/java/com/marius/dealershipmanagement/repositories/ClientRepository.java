@@ -22,5 +22,4 @@ public interface ClientRepository extends Repository<Client, Integer> {
 
     // delete client by id
     void deleteById(Integer id);
-
 }
